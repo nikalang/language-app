@@ -142,7 +142,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
     head : simple_noun;
 
-    modifier : relative_clause | adnoun | bare_adnoun;
+    modifier : relative_clause+ | adnoun | bare_adnoun;
 
     adnoun : noun_phrase '노';
 
