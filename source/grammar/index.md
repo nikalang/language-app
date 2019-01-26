@@ -38,9 +38,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 2 Clause
 
 ```
-    clause : #coordinable_and_negatable<clause, base_clause>;
+    clause : #coordinable_and_negatable<clause, simple_clause>;
 
-    base_clause : topic? comment;
+    simple_clause : topic? comment;
 
     topic : noun_phrase '하';
 ```
@@ -48,9 +48,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 3 Comment
 
 ```
-    comment : #coordinable_and_negatable<comment, base_comment>;
+    comment : #coordinable_and_negatable<comment, simple_comment>;
 
-    base_comment : normal_comment | adverb_emphasis_comment | object_emphasis_comment;
+    simple_comment : normal_comment | adverb_emphasis_comment | object_emphasis_comment;
 
     normal_comment : subject? predicate;
 
@@ -64,9 +64,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 4 Predicate
 
 ```
-    predicate : #coordinable_and_negatable<predicate, base_predicate>;
+    predicate : #coordinable_and_negatable<predicate, simple_predicate>;
 
-    base_predicate : adverb* verb_phrase;
+    simple_predicate : adverb* verb_phrase;
 
     adverb : noun_phrase '어';
 ```
@@ -74,9 +74,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 5 Verb Phrase
 
 ```
-    verb_phrase : #coordinable_and_negatable<verb_phrase, base_verb_phrase>;
+    verb_phrase : #coordinable_and_negatable<verb_phrase, simple_verb_phrase>;
 
-    base_verb_phrase : copular_verb_phrase | adverbial_verb_phrase | adnominal_verb_phrase |
+    simple_verb_phrase : copular_verb_phrase | adverbial_verb_phrase | adnominal_verb_phrase |
                        descriptive_verb_phrase | action_verb_phrase;
 
     copular_verb_phrase : noun_phrase;
@@ -95,10 +95,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
     bare_object_followed_by_simple_verb : bare_object? simple_verb;
 
-    object_followed_by_verb : object? simple_or_periphrastic_verbs;
+    object_followed_by_verb : object? verb;
 
-    simple_or_periphrastic_verbs : #coordinable_and_negatable
-                                           <simple_or_periphrastic_verbs, simple_or_periphrastic_verb>;
+    verb : #coordinable_and_negatable<verb, simple_or_periphrastic_verb>;
 
     simple_or_periphrastic_verb : simple_verb | periphrastic_verb;
 
@@ -140,9 +139,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 7 Relative Clause
 
 ```
-    relative_clause : #coordinable_and_negatable<relative_clause, base_relative_clause>;
+    relative_clause : #coordinable_and_negatable<relative_clause, simple_relative_clause>;
 
-    base_relative_clause : normal_relative_clause | adverb_emphasis_relative_clause |
+    simple_relative_clause : normal_relative_clause | adverb_emphasis_relative_clause |
                            object_emphasis_relative_clause;
 
     normal_relative_clause : subject? relative_predicate;
@@ -155,17 +154,17 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 8 Relative Predicate
 
 ```
-    relative_predicate : #coordinable_and_negatable<relative_predicate, base_relative_predicate>;
+    relative_predicate : #coordinable_and_negatable<relative_predicate, simple_relative_predicate>;
 
-    base_relative_predicate : adverb* relative_verb_phrase;
+    simple_relative_predicate : adverb* relative_verb_phrase;
 ```
 
 # § 9 Relative Verb Phrase
 
 ```
-    relative_verb_phrase : #coordinable_and_negatable<relative_verb_phrase, base_relative_verb_phrase>;
+    relative_verb_phrase : #coordinable_and_negatable<relative_verb_phrase, simple_relative_verb_phrase>;
 
-    base_relative_verb_phrase : adverbial_verb_phrase | descriptive_verb_phrase | action_verb_phrase;
+    simple_relative_verb_phrase : adverbial_verb_phrase | descriptive_verb_phrase | action_verb_phrase;
 ```
 
 # Appendix: Grammar Templates
