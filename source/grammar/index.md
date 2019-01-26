@@ -126,11 +126,15 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
     head : simple_noun;
 
-    modifiers : (relative_clause | adnoun)* bare_adnoun?;
+    modifiers : (relative_clause_adnoun | adnoun)* bare_relative_clause_adnoun* bare_adnoun?;
 
     adnoun : noun_phrase '노';
 
     bare_adnoun : noun_phrase;
+
+    relative_clause_adnoun : relative_clause '노';
+
+    bare_relative_clause_adnoun : relative_clause;
 ```
 
 # § 7 Relative Clause
@@ -161,7 +165,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 ```
     relative_verb_phrase : #coordinable_and_negatable<relative_verb_phrase, base_relative_verb_phrase>;
 
-    base_relative_verb_phrase : descriptive_verb_phrase | action_verb_phrase;
+    base_relative_verb_phrase : adverbial_verb_phrase | descriptive_verb_phrase | action_verb_phrase;
 ```
 
 # Appendix: Grammar Templates
@@ -195,3 +199,4 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
         simple_${unit} : ${base_unit};
 ```
+
