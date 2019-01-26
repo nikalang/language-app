@@ -134,9 +134,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
     
     verbal_noun : declarative_verbal_noun | interrogative_verbal_noun;
     
-    declarative_verbal_noun : comment '다';
+    declarative_verbal_noun : clause '다';
     
-    interrogative_verbal_noun : comment '까';
+    interrogative_verbal_noun : clause '까';
 
     modifiable_noun : modifier? head;
 
