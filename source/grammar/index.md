@@ -83,7 +83,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
     verb_phrase : #coordinable_and_negatable<verb_phrase, simple_verb_phrase>;
 
     simple_verb_phrase : copular_verb_phrase | adverbial_verb_phrase | adnominal_verb_phrase |
-                       descriptive_verb_phrase | action_verb_phrase;
+                         descriptive_verb_phrase | action_verb_phrase;
 
     copular_verb_phrase : noun_phrase;
 
