@@ -40,7 +40,11 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 ```
     clause : #coordinable_and_negatable<clause, simple_clause>;
 
-    simple_clause : topic? comment;
+    simple_clause : normal_clause | emphasizing_clause
+
+    normal_clause : topic? comment;
+
+    emphasizing_clause : (subject | adverb | object) topic comment;
 
     topic : noun_phrase '하';
 ```
@@ -50,13 +54,11 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 ```
     comment : #coordinable_and_negatable<comment, simple_comment>;
 
-    simple_comment : normal_comment | adverb_emphasis_comment | object_emphasis_comment;
+    simple_comment : normal_comment | emphasizing_comment;
 
     normal_comment : subject? predicate;
 
-    adverb_emphasis_comment : adverb subject predicate;
-
-    object_emphasis_comment : object (subject | adverb) predicate;
+    emphasizing_comment : (adverb | object) subject predicate;
 
     subject : noun_phrase '가';
 ```
@@ -66,7 +68,11 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 ```
     predicate : #coordinable_and_negatable<predicate, simple_predicate>;
 
-    simple_predicate : adverb* verb_phrase;
+    simple_predicate : normal_predicate | emphasizing_predicate;
+
+    normal_predicate : adverb* verb_phrase;
+
+    emphasizing_predicate : object adverb+ verb_phrase;
 
     adverb : noun_phrase '어';
 ```
@@ -141,14 +147,11 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 ```
     relative_clause : #coordinable_and_negatable<relative_clause, simple_relative_clause>;
 
-    simple_relative_clause : normal_relative_clause | adverb_emphasis_relative_clause |
-                           object_emphasis_relative_clause;
+    simple_relative_clause : normal_relative_clause | emphasizing_relative_clause;
 
     normal_relative_clause : subject? relative_predicate;
 
-    adverb_emphasis_relative_clause : adverb subject relative_predicate;
-
-    object_emphasis_relative_clause : object (subject | adverb) relative_predicate;
+    emphasizing_relative_clause : (adverb | object) subject relative_predicate;
 ```
 
 # § 8 Relative Predicate
@@ -156,7 +159,11 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 ```
     relative_predicate : #coordinable_and_negatable<relative_predicate, simple_relative_predicate>;
 
-    simple_relative_predicate : adverb* relative_verb_phrase;
+    simple_relative_predicate : normal_relative_predicate | emphasizing_relative_predicate;
+
+    normal_relative_predicate : adverb* relative_verb_phrase;
+
+    emphasizing_relative_predicate : object adverb+ relative_verb_phrase;
 ```
 
 # § 9 Relative Verb Phrase
