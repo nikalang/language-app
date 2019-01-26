@@ -38,19 +38,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 2 Clause
 
 ```
-    clause : compound_clause | simple_clause;
-
-    compound_clause : or_compound_clause | and_compound_clause;
-
-    or_compound_clause : (clause '나')+ clause '나'?;
-
-    and_compound_clause : (clause '고')+ clause '고'?;
-
-    simple_clause : positive_clause | negative_clause;
-
-    positive_clause : base_clause;
-
-    negative_clause : base_clause '니';
+    clause : #coordinable_and_negatable<clause, base_clause>;
 
     base_clause : topic? comment;
 
@@ -60,19 +48,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 3 Comment
 
 ```
-    comment : compound_comment | simple_comment;
-
-    compound_comment : or_compound_comment | and_compound_comment;
-
-    or_compound_comment : (comment '나')+ comment '나'?;
-
-    and_compound_comment : (comment '고')+ comment '고'?; 
-
-    simple_comment : positive_comment | negative_comment;
-
-    positive_comment : base_comment;
-
-    negative_comment : base_comment '니';
+    comment : #coordinable_and_negatable<comment, base_comment>;
 
     base_comment : normal_comment | adverb_emphasis_comment | object_emphasis_comment;
 
@@ -88,19 +64,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 4 Predicate
 
 ```
-    predicate : compound_predicate | simple_predicate;
-
-    compound_predicate : or_compound_predicate | and_compound_predicate;
-
-    or_compound_predicate : (predicate '나')+ predicate '나'?;
-
-    and_compound_predicate : (predicate '고')+ predicate '고'?; 
-
-    simple_predicate : positive_predicate | negative_predicate;
-
-    positive_predicate : base_predicate;
-
-    negative_predicate : base_predicate '니';
+    predicate : #coordinable_and_negatable<predicate, base_predicate>;
 
     base_predicate : adverb* verb_phrase;
 
@@ -137,13 +101,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 6 Noun Phrase 
 
 ```
-    noun_phrase : compound_noun_phrase | simple_noun_phrase;
-
-    compound_noun_phrase : or_compound_noun_phrase | and_compound_noun_phrase;
-
-    or_compound_noun_phrase : (noun_phrase '나')+ noun_phrase '나'?;
-
-    and_compound_noun_phrase : (noun_phrase '고')+ noun_phrase '고'?;
+    noun_phrase : #coordinable<noun_phrase, simple_noun_phrase>;
 
     simple_noun_phrase : verbal_noun | modifiable_noun;
     
@@ -167,19 +125,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 7 Relative Clause
 
 ```
-    relative_clause : compound_relative_clause | simple_relative_clause;
-
-    compound_relative_clause : or_compound_relative_clause | and_compound_relative_clause;
-
-    or_compound_relative_clause : (relative_clause '나')+ relative_clause '나'?;
-
-    and_compound_relative_clause : (relative_clause '고')+ relative_clause '고'?;
-
-    simple_relative_clause : positive_relative_clause | negative_relative_clause;
-
-    positive_relative_clause : base_relative_clause;
-
-    negative_relative_clause : base_relative_clause '니';
+    relative_clause : #coordinable_and_negatable<relative_clause, base_relative_clause>;
 
     base_relative_clause : normal_relative_clause | adverb_emphasis_relative_clause |
                            object_emphasis_relative_clause;
@@ -194,19 +140,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 8 Relative Predicate
 
 ```
-    relative_predicate : compound_relative_predicate | simple_relative_predicate;
-
-    compound_relative_predicate : or_compound_relative_predicate | and_compound_relative_predicate;
-
-    or_compound_relative_predicate : (relative_predicate '나')+ relative_predicate '나'?;
-
-    and_compound_relative_predicate : (relative_predicate '고')+ relative_predicate '고'?; 
-
-    simple_relative_predicate : positive_relative_predicate | negative_relative_predicate;
-
-    positive_relative_predicate : base_relative_predicate;
-
-    negative_relative_predicate : base_relative_predicate '니';
+    relative_predicate : #coordinable_and_negatable<relative_predicate, base_relative_predicate>;
 
     base_relative_predicate : adverb* relative_verb_phrase;
 ```
@@ -217,3 +151,34 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
     relative_verb_phrase : descriptive_verb_phrase | action_verb_phrase;
 ```
 
+# Appendix: Grammar Templates
+
+```
+    #coordinable_and_negatable<unit, base_unit>:
+
+        result : compound_unit | simple_unit;
+
+        compound_unit : or_compound_unit | and_compound_unit;
+
+        or_compound_unit : (unit '나')+ unit '나'?;
+
+        and_compound_unit : (unit '고')+ unit '고'?;
+
+        simple_unit : positive_unit | negative_unit;
+
+        positive_unit : base_unit;
+
+        negative_unit : base_unit '니';
+
+    #coordinable<unit, base_unit>:
+
+        result : compound_unit | simple_unit;
+
+        compound_unit : or_compound_unit | and_compound_unit;
+
+        or_compound_unit : (unit '나')+ unit '나'?;
+
+        and_compound_unit : (unit '고')+ unit '고'?;
+
+        simple_unit : base_unit;
+```
