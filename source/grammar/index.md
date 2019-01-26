@@ -99,7 +99,7 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
     transitive_verb_phrase : bare_object_followed_by_simple_verb | object_followed_by_raw_verb_phrase;
 
-    bare_object_followed_by_simple_verb : bare_object? simple_verb;
+    bare_object_followed_by_simple_verb : bare_object simple_verb;
 
     object_followed_by_raw_verb_phrase : object? raw_verb_phrase;
 
