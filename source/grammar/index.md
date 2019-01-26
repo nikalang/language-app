@@ -156,29 +156,29 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 ```
     #coordinable_and_negatable<unit, base_unit>:
 
-        result : compound_unit | simple_unit;
+        ${result} : compound_${unit} | simple_${unit};
 
-        compound_unit : or_compound_unit | and_compound_unit;
+        compound_${unit} : or_compound_${unit} | and_compound_${unit};
 
-        or_compound_unit : (unit '나')+ unit '나'?;
+        or_compound_${unit} : (${unit} '나')+ ${unit} '나'?;
 
-        and_compound_unit : (unit '고')+ unit '고'?;
+        and_compound_${unit} : (${unit} '고')+ ${unit} '고'?;
 
-        simple_unit : positive_unit | negative_unit;
+        simple_${unit} : positive_${unit} | negative_${unit};
 
-        positive_unit : base_unit;
+        positive_${unit} : ${base_unit};
 
-        negative_unit : base_unit '니';
+        negative_${unit} : ${base_unit} '니';
 
     #coordinable<unit, base_unit>:
 
-        result : compound_unit | simple_unit;
+        ${result} : compound_${unit} | simple_${unit};
 
-        compound_unit : or_compound_unit | and_compound_unit;
+        compound_${unit} : or_compound_${unit} | and_compound_${unit};
 
-        or_compound_unit : (unit '나')+ unit '나'?;
+        or_compound_${unit} : (${unit} '나')+ ${unit} '나'?;
 
-        and_compound_unit : (unit '고')+ unit '고'?;
+        and_compound_${unit} : (${unit} '고')+ ${unit} '고'?;
 
-        simple_unit : base_unit;
+        simple_${unit} : ${base_unit};
 ```
