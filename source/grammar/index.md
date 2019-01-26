@@ -96,7 +96,8 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 5 Verb Phrase
 
 ```
-    verb_phrase : copular_verb_phrase | adverbial_verb_phrase | adnominal_verb_phrase | descriptive_verb_phrase | action_verb_phrase;
+    verb_phrase : copular_verb_phrase | adverbial_verb_phrase | adnominal_verb_phrase |
+                  descriptive_verb_phrase | action_verb_phrase;
 
     copular_verb_phrase : noun_phrase;
 
@@ -166,7 +167,8 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
     negative_relative_clause : base_relative_clause '니';
 
-    base_relative_clause : normal_relative_clause | adverb_emphasis_relative_clause | object_emphasis_relative_clause;
+    base_relative_clause : normal_relative_clause | adverb_emphasis_relative_clause |
+                           object_emphasis_relative_clause;
 
     normal_relative_clause : subject? relative_predicate;
 
