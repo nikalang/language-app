@@ -88,7 +88,21 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 4 Predicate
 
 ```
-    predicate : adverb* verb_phrase;
+    predicate : compound_predicate | simple_predicate;
+
+    compound_predicate : or_compound_predicate | and_compound_predicate;
+
+    or_compound_predicate : (predicate '나')+ predicate '나'?;
+
+    and_compound_predicate : (predicate '고')+ predicate '고'?; 
+
+    simple_predicate : positive_predicate | negative_predicate;
+
+    positive_predicate : base_predicate;
+
+    negative_predicate : base_predicate '니';
+
+    base_predicate : adverb* verb_phrase;
 
     adverb : noun_phrase '어';
 ```
@@ -180,7 +194,21 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 8 Relative Predicate
 
 ```
-    relative_predicate : adverb* relative_verb_phrase;
+    relative_predicate : compound_relative_predicate | simple_relative_predicate;
+
+    compound_relative_predicate : or_compound_relative_predicate | and_compound_relative_predicate;
+
+    or_compound_relative_predicate : (relative_predicate '나')+ relative_predicate '나'?;
+
+    and_compound_relative_predicate : (relative_predicate '고')+ relative_predicate '고'?; 
+
+    simple_relative_predicate : positive_relative_predicate | negative_relative_predicate;
+
+    positive_relative_predicate : base_relative_predicate;
+
+    negative_relative_predicate : base_relative_predicate '니';
+
+    base_relative_predicate : adverb* relative_verb_phrase;
 ```
 
 # § 9 Relative Verb Phrase
