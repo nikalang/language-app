@@ -141,7 +141,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
     simple_head_phrase : head;
 
-    head : simple_noun;
+    head : simple_noun number?;
+
+    number : number_noun+ counting_noun;
 
     adnoun : noun_phrase '노';
 
