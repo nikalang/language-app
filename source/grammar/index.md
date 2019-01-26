@@ -74,8 +74,10 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 5 Verb Phrase
 
 ```
-    verb_phrase : copular_verb_phrase | adverbial_verb_phrase | adnominal_verb_phrase |
-                  descriptive_verb_phrase | action_verb_phrase;
+    verb_phrase : #coordinable_and_negatable<verb_phrase, base_verb_phrase>;
+
+    base_verb_phrase : copular_verb_phrase | adverbial_verb_phrase | adnominal_verb_phrase |
+                       descriptive_verb_phrase | action_verb_phrase;
 
     copular_verb_phrase : noun_phrase;
 
@@ -148,7 +150,9 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 # § 9 Relative Verb Phrase
 
 ```
-    relative_verb_phrase : descriptive_verb_phrase | action_verb_phrase;
+    relative_verb_phrase : #coordinable_and_negatable<relative_verb_phrase, base_relative_verb_phrase>;
+
+    base_relative_verb_phrase : descriptive_verb_phrase | action_verb_phrase;
 ```
 
 # Appendix: Grammar Templates
