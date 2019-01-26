@@ -91,7 +91,15 @@ An **interrogative sentence** is a sentence that asks a question. In speech, eit
 
     intransitive_verb_phrase : simple_verb | periphrastic_verb;
 
-    transitive_verb_phrase : ((bare_object | object)? simple_verb) | (object? periphrastic_verb);
+    transitive_verb_phrase : bare_object_followed_by_simple_verb | object_followed_by_verb;
+
+    bare_object_followed_by_simple_verb : bare_object? simple_verb;
+
+    object_followed_by_verb : object? simple_or_periphrastic_verbs;
+
+    simple_or_periphrastic_verbs : #coordinable_and_negatable<simple_or_periphrastic_verbs, simple_or_periphrastic_verb>;
+
+    simple_or_periphrastic_verb : simple_verb | periphrastic_verb;
 
     periphrastic_verb : noun_phrase '쑤루';
 
